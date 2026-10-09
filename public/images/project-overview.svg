@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500" fill="none">
+  <defs><linearGradient id="bg" x1="0" y1="0" x2="800" y2="500" gradientUnits="userSpaceOnUse"><stop stop-color="#33483d"/><stop offset="1" stop-color="#192b25"/></linearGradient><linearGradient id="fill" x1="0" y1="244" x2="0" y2="348" gradientUnits="userSpaceOnUse"><stop stop-color="#a3e635" stop-opacity=".2"/><stop offset="1" stop-color="#a3e635" stop-opacity="0"/></linearGradient><filter id="shadow" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dy="12" stdDeviation="12" flood-color="#0b1a11" flood-opacity=".25"/></filter></defs>
+  <path fill="url(#bg)" d="M0 0h800v500H0z"/>
+  <rect x="34" y="28" width="732" height="444" rx="10" fill="#111923" stroke="#4c6251" stroke-opacity=".5" filter="url(#shadow)"/>
+  <path d="M44 28h712a10 10 0 0 1 10 10v19H34V38a10 10 0 0 1 10-10Z" fill="#222f2c"/>
+  <g fill="#708271"><circle cx="51" cy="43" r="3"/><circle cx="62" cy="43" r="3"/><circle cx="73" cy="43" r="3"/></g>
+  <rect x="313" y="36" width="175" height="14" rx="4" fill="#18231f"/><text x="400" y="46" fill="#8b9f8e" font-family="Arial,sans-serif" font-size="7" text-anchor="middle">overview.app / workspace</text>
+  <path d="M34 57h144v415H44a10 10 0 0 1-10-10V57Z" fill="#101720"/>
+  <rect x="51" y="81" width="20" height="20" rx="4" fill="#b1d582"/>
+  <path d="M56 86h4v4h-4zM63 86h4v9h-4zM56 93h4v3h-4z" stroke="#334a22" stroke-width="1.3"/>
+  <text x="78" y="95" fill="#e7ecdf" font-family="Arial,sans-serif" font-size="16" font-weight="600" letter-spacing="-.7">overview.</text>
+  <text x="52" y="132" fill="#657663" font-family="Arial,sans-serif" font-size="6" letter-spacing="1.3">WORKSPACE</text>
+  <rect x="45" y="145" width="122" height="27" rx="5" fill="#a3e63513"/>
+  <g font-family="Arial,sans-serif" font-size="8"><text x="76" y="162" fill="#b7d592">Overview</text><text x="76" y="194" fill="#88988a">Analytics</text><text x="76" y="226" fill="#88988a">Team members</text><text x="76" y="258" fill="#88988a">Projects</text><text x="76" y="290" fill="#88988a">Settings</text></g>
+  <g stroke="#91aa77" stroke-width="1"><rect x="55" y="154" width="10" height="9" rx="1"/><path d="M55 159h10m-6-5v9"/></g>
+  <g stroke="#718176" stroke-width="1"><path d="M55 195v-5m4 5v-9m4 9v-6M55 253h10v8H55zM58 253v-2h4v2"/><circle cx="59" cy="219" r="3"/><path d="M54 227a5 5 0 0 1 10 0"/><circle cx="60" cy="286" r="5"/><circle cx="60" cy="286" r="2"/></g>
+  <path d="M51 421h110" stroke="#27352a"/>
+  <circle cx="62" cy="445" r="10" fill="#33482d"/><text x="62" y="448" fill="#bad599" font-family="Arial,sans-serif" font-size="7" text-anchor="middle">D</text><text x="80" y="444" fill="#b4c0b1" font-family="Arial,sans-serif" font-size="8">Demo workspace</text><text x="80" y="455" fill="#71816d" font-family="Arial,sans-serif" font-size="6">Sample data</text>
+  <text x="202" y="91" fill="#718a78" font-family="Arial,sans-serif" font-size="7">Workspace / Overview</text>
+  <text x="201" y="119" fill="#e2e9dd" font-family="Arial,sans-serif" font-size="21" font-weight="600" letter-spacing="-.6">Workspace overview</text>
+  <text x="202" y="139" fill="#7e9282" font-family="Arial,sans-serif" font-size="8">A clearer view of the things that matter.</text>
+  <rect x="650" y="104" width="87" height="27" rx="4" fill="#a8d56d"/><text x="666" y="121" fill="#273d1c" font-family="Arial,sans-serif" font-size="8">+ Add member</text>
+  <g fill="#18232b" stroke="#2b3a3a"><rect x="202" y="158" width="169" height="62" rx="5"/><rect x="385" y="158" width="169" height="62" rx="5"/><rect x="568" y="158" width="169" height="62" rx="5"/></g>
+  <g font-family="Arial,sans-serif" font-size="7" fill="#879b8b"><text x="215" y="176">Total members</text><text x="398" y="176">Active members</text><text x="581" y="176">Invited members</text></g>
+  <g font-family="Arial,sans-serif" font-size="23" fill="#e0e9d6" font-weight="600"><text x="215" y="205">04</text><text x="398" y="205">03</text><text x="581" y="205">01</text></g>
+  <g stroke="#86a666" stroke-width="1.2"><circle cx="349" cy="174" r="3"/><path d="M344 183a5 5 0 0 1 10 0M528 178h3l3-6 3 10 3-4h3"/><circle cx="715" cy="178" r="6"/><path d="M715 175v4m0 2v1"/></g>
+  <rect x="202" y="233" width="535" height="126" rx="5" fill="#121d27" stroke="#293a36"/>
+  <text x="215" y="253" fill="#bdcfb5" font-family="Arial,sans-serif" font-size="8">Workspace activity</text><text x="721" y="252" fill="#8a9f83" font-family="Arial,sans-serif" font-size="6" text-anchor="end">LAST 7 DAYS / ILLUSTRATIVE</text>
+  <path d="M216 273h505M216 299h505M216 325h505" stroke="#29392f" stroke-dasharray="3 5"/>
+  <path d="m216 329 43-8 34 6 46-25 36 8 44-31 40 13 36-10 32 5 44-20 43 8 37-22 30 5 30-11v96H216Z" fill="url(#fill)"/>
+  <path d="m216 329 43-8 34 6 46-25 36 8 44-31 40 13 36-10 32 5 44-20 43 8 37-22 30 5 30-11" stroke="#aed974" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <g font-family="Arial,sans-serif" font-size="6" fill="#6d8475"><text x="217" y="349">Mon</text><text x="299" y="349">Tue</text><text x="381" y="349">Wed</text><text x="463" y="349">Thu</text><text x="545" y="349">Fri</text><text x="627" y="349">Sat</text><text x="709" y="349">Sun</text></g>
+  <text x="202" y="383" fill="#bacab5" font-family="Arial,sans-serif" font-size="10" font-weight="600">Team directory</text><text x="736" y="382" fill="#799777" font-family="Arial,sans-serif" font-size="7" text-anchor="end">View all members</text>
+  <path d="M202 396h535" stroke="#2d3c34"/>
+  <g font-family="Arial,sans-serif" font-size="6" fill="#7b9080"><text x="213" y="410">MEMBER</text><text x="495" y="410">ROLE</text><text x="625" y="410">STATUS</text></g>
+  <path d="M202 419h535M202 450h535" stroke="#23352d"/>
+  <circle cx="221" cy="435" r="8" fill="#374d34"/><text x="221" y="437" fill="#bcd5a9" font-family="Arial,sans-serif" font-size="5" text-anchor="middle">AM</text><text x="238" y="433" fill="#b6c6b2" font-family="Arial,sans-serif" font-size="7">Alex Morgan</text><text x="238" y="442" fill="#6e8675" font-family="Arial,sans-serif" font-size="6">alex@example.com</text><text x="495" y="438" fill="#8ea18e" font-family="Arial,sans-serif" font-size="7">Editor</text>
+  <rect x="623" y="427" width="43" height="16" rx="4" fill="#a3e6350e"/><circle cx="632" cy="435" r="2" fill="#a3c584"/><text x="638" y="438" fill="#a3c584" font-family="Arial,sans-serif" font-size="6">Active</text><text x="718" y="437" fill="#6e8877" font-family="Arial,sans-serif" font-size="10">...</text>
+</svg>
