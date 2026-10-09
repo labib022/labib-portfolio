@@ -13,11 +13,10 @@ import { Services } from "./sections/Services";
 import { Process } from "./sections/Process";
 import { Contact } from "./sections/Contact";
 import { ProjectModal } from "./components/ProjectModal";
-import type { Project, ServiceInquiry } from "./types";
+import type { Project } from "./types";
 
 export default function App() {
-  const [selectedProject, setSelectedProject] = useState<{ project: Project; preview: boolean } | null>(null);
-  const [inquiry, setInquiry] = useState<ServiceInquiry | null>(null);
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   return (
     <LazyMotion features={domAnimation} strict>
@@ -30,14 +29,14 @@ export default function App() {
             <Hero />
             <About />
             <Skills />
-            <Projects onOpen={(project, preview = false) => setSelectedProject({ project, preview })} />
+            <Projects onOpen={(project) => setSelectedProject(project)} />
             <Experience />
-            <Services onInquiry={(subject) => setInquiry({ subject, requestedAt: Date.now() })} />
+            <Services />
             <Process />
-            <Contact inquiry={inquiry} />
+            <Contact />
           </main>
           <Footer />
-          {selectedProject && <ProjectModal project={selectedProject.project} initialPreview={selectedProject.preview} onClose={() => setSelectedProject(null)} />}
+          {selectedProject && <ProjectModal project={selectedProject} onClose={() => setSelectedProject(null)} />}
         </ResourceProvider>
       </MotionConfig>
     </LazyMotion>

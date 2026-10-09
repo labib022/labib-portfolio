@@ -17,14 +17,13 @@ export function ResourceProvider({ children }: { children: ReactNode }) {
     github: "GitHub profile",
     linkedin: "LinkedIn profile",
     email: "Let's start a conversation",
-    repository: `${resource?.projectName ?? "Project"} repository`,
   };
 
   return (
     <ResourceContext.Provider value={setResource}>
       {children}
       {resource && (
-        <Modal title={labels[resource.kind]} subtitle="Portfolio preview" onClose={() => setResource(null)}>
+        <Modal title={labels[resource.kind]} subtitle="Portfolio details" onClose={() => setResource(null)}>
           <div className="resource-content">
             <div className="resource-icon">{resource.kind === "resume" ? <FileText size={28} /> : <Link2 size={28} />}</div>
             {resource.kind === "resume" ? (
@@ -35,12 +34,10 @@ export function ResourceProvider({ children }: { children: ReactNode }) {
               </>
             ) : (
               <>
-                <p>{resource.kind === "repository"
-                  ? "This is an interactive example, not a published repository. No source-code URL has been supplied for this concept."
-                  : resource.kind === "email"
-                    ? "An email address hasn't been added to this example portfolio. You can still prepare and download a message using the contact form."
-                    : "This example portfolio isn't connected to a personal profile yet. Add your own profile URL before publishing."}</p>
-                <p className="text-muted text-sm">{resource.kind === "repository" ? "Project links are editable in src/data/projects.ts." : "Personal details and profile links are editable in src/data/site.ts."}</p>
+                <p>{resource.kind === "email"
+                  ? "An email address hasn't been added to this portfolio. You can still prepare and download a message using the contact form."
+                  : "This portfolio isn't connected to a personal profile yet. Add your own profile URL in src/data/site.ts before publishing."}</p>
+                <p className="text-muted text-sm">Personal details and profile links are editable in src/data/site.ts.</p>
               </>
             )}
             <a href="#contact" className="text-link" onClick={() => setResource(null)}>Go to the contact section <ArrowUpRight size={16} /></a>
@@ -52,7 +49,7 @@ export function ResourceProvider({ children }: { children: ReactNode }) {
 }
 
 interface ProfileLinkProps {
-  kind: Exclude<ResourceKind, "repository">;
+  kind: ResourceKind;
   children: ReactNode;
   className?: string;
   label?: string;

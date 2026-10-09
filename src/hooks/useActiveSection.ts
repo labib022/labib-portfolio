@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { navigation } from "../data/site";
+
+const allSectionIds = ["home", "about", "skills", "projects", "experience", "services", "process", "contact"];
 
 export function useActiveSection() {
   const [activeSection, setActiveSection] = useState("home");
@@ -11,11 +12,12 @@ export function useActiveSection() {
       frame = 0;
       setScrolled(window.scrollY > 24);
       const threshold = window.innerHeight * 0.35;
-      const current = [...navigation].reverse().find(({ id }) => {
+      const current = [...allSectionIds].reverse().find((id) => {
         const element = document.getElementById(id);
         return element && element.getBoundingClientRect().top <= threshold;
       });
-      setActiveSection(current?.id ?? "home");
+      const activeId = current === "process" ? "services" : (current ?? "home");
+      setActiveSection(activeId);
     };
     const scheduleUpdate = () => {
       if (!frame) frame = window.requestAnimationFrame(update);

@@ -13,8 +13,8 @@ export function Seo() {
       <meta property="og:type" content="website" />
       <meta property="og:site_name" content={`${site.displayName}${site.brandSuffix}`} />
       <meta name="twitter:card" content="summary_large_image" />
-      <meta property="og:image" content={`${publicOrigin}/images/developer-workspace.jpg`} />
-      <meta property="og:image:alt" content="A thoughtfully designed dark developer workspace" />
+      <meta property="og:image" content={`${publicOrigin}${site.profileImage}`} />
+      <meta property="og:image:alt" content={`${site.displayName}, a full stack developer from Dhaka`} />
       {site.siteUrl && <>
         <link rel="canonical" href={site.siteUrl} />
         <meta property="og:url" content={site.siteUrl} />

@@ -2,28 +2,23 @@ export const services = [
   {
     id: "frontend",
     title: "Frontend development",
-    description: "Responsive, intuitive interfaces built with React and a real attention to the details.",
-  },
-  {
-    id: "fullstack",
-    title: "Full stack development",
-    description: "Complete web applications, connecting a thoughtful frontend to a dependable backend.",
+    description: "Responsive interfaces with React and Next.js, state management with Redux Toolkit, and API data fetching with RTK Query.",
   },
   {
     id: "backend",
-    title: "Backend & API development",
-    description: "REST APIs, database integration, authentication, and the logic that brings it all together.",
+    title: "Backend & APIs",
+    description: "REST APIs with Node.js, Express, and MongoDB, including authentication, email verification, and Google sign-in through Firebase.",
   },
   {
-    id: "maintenance",
-    title: "Website maintenance",
-    description: "Bug fixes, responsive improvements, cleaner code, and a faster experience for your users.",
+    id: "fullstack",
+    title: "Full stack features",
+    description: "Complete features from UI to database: multi-step booking flows, carts and checkout, user dashboards, and order tracking.",
   },
 ] as const;
 
 export const processSteps = [
-  { name: "Discover", description: "Understand your goals, the problem, and the people we're building for." },
-  { name: "Design", description: "Map the structure and shape a clear, intuitive user experience." },
-  { name: "Develop", description: "Build with care, connect the pieces, and test the details." },
-  { name: "Deliver", description: "Deploy confidently, fine-tune performance, and keep improving." },
+  { name: "Understand", description: "Read the requirements, ask questions early, and be clear on what done looks like." },
+  { name: "Plan", description: "Break the work into small tasks and decide the data model and API shape before writing code." },
+  { name: "Build", description: "Write clean, reusable code, commit often with Git, and test the details as I go." },
+  { name: "Ship & improve", description: "Deploy, check it in the real world, and keep refining based on feedback." },
 ];

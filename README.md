@@ -1,4 +1,4 @@
-# Shawon.dev Portfolio
+# Labib.dev Portfolio
 
 A responsive, single-page developer portfolio built with React 19, TypeScript,
 Vite, Tailwind CSS v4, Framer Motion, Lucide, React Hook Form, and Zod.
@@ -26,20 +26,18 @@ The existing project does not provide a lint or automated browser-test script.
 The production build does not itself run TypeScript's type checker, so run the
 type-check command separately before deploying changes.
 
-## Make it yours
+## Personalization
 
-The name **Shawon** is the example name from the brief, not an asserted personal
-identity. The location, availability, experience length, and MERN stack are
-editable example values. No real employers, dates, achievements, metrics,
-testimonials, social accounts, or project repositories have been invented.
+This portfolio is configured for **Labib** (Md Labebul Islam), Full Stack Web Developer.
+The location is set to **Dhaka, Bangladesh · Remote (Worldwide)**, and primary stack to **MERN**.
 
 | Content | Edit here |
 | --- | --- |
 | Name, role, location, experience, availability, profiles, resume, site URL | `src/data/site.ts` |
-| Projects, screenshots, links, and example labels | `src/data/projects.ts` |
+| Projects (fields: `id`, `name`, `category`, `description`, `image`, `imageAlt`, `technologies`, `features`, `overview`, `approach`, `liveUrl`) | `src/data/projects.ts` |
 | Technical skills | `src/data/skills.ts` |
-| Verified employment, internships, freelance experience | `src/data/experience.ts` |
-| Services and work process | `src/data/services.ts` |
+| Work experience records | `src/data/experience.ts` |
+| What I bring (skills & process) | `src/data/services.ts` |
 | Design tokens, typography, layout, breakpoints | `src/index.css` |
 | Page metadata | `src/components/Seo.tsx` |
 | Static browser title and font loading | `index.html` |
@@ -50,8 +48,7 @@ Before publication:
 - Verify the role, location, experience length, and availability.
 - Set your email, GitHub URL, LinkedIn URL, PDF resume URL, and canonical `siteUrl`.
 - Set `isExampleIdentity` to `false` only after replacing the example identity.
-- Replace example project content with real work and set each `isExample` flag accurately.
-- Add verified experience records to the empty `experience` array. The current fallback is explicitly a learning-focused example, not an employment record.
+- Manage project content in `src/data/projects.ts` with accurate live links, screenshots, overview, approach, and feature lists.
 - Update the static fallback title in `index.html` to match your name.
 - Review remaining narrative text in `src/sections/` for accuracy.
 
@@ -59,31 +56,13 @@ Before publication:
 by default, since none was provided. The generated workspace photograph is
 atmospheric artwork, not a claim about the developer's personal office.
 
-## Project interactions
+## Projects
 
-All four projects are explicitly labeled **interactive concepts**, not client
-work or completed full-stack products. Their included previews really work:
+Projects are defined in `src/data/projects.ts` as an array of real project objects.
+Each project supports the following fields:
+`id`, `name`, `category`, `description`, `image`, `imageAlt`, `technologies`, `features`, `overview`, `approach`, and `liveUrl`.
 
-- **Cartify:** product search, add to cart, quantity changes, and calculated subtotals.
-- **Taskflow:** task creation, text search, status changes, and deletion.
-- **Devlog:** article search, topic filters, reading views, and session bookmarks.
-- **Overview:** searchable sample directory, status filters, validated member creation, status toggles, removal, and derived member counts.
-
-These previews use in-memory sample data. Closing or switching away from a
-preview resets it. They do not implement server authentication, purchasing,
-publishing, payments, real invitations, or data persistence. The project detail
-views distinguish the working frontend preview from a suggested production
-architecture and stack.
-
-Every project has an independent string `id`; you can add as many as you need.
-The optional `previewKind` selects one of the four bundled concept sandboxes.
-Remove `previewKind` when replacing a concept with a real project, then set its
-own `liveUrl` and `repositoryUrl`.
-
-When `liveUrl` or `repositoryUrl` is configured, the relevant card links use the
-actual URLs. Otherwise, Live Demo opens the local interactive preview and the
-source link explains that no repository is connected. Unconfigured social links
-also explain the missing configuration rather than pointing to an invented account.
+Every project includes a primary "Visit live site" button linking directly to `liveUrl` in a new tab, as well as a full detailed modal presenting the project's background, technical approach, key features, and technology stack.
 
 ## Resume
 
@@ -96,47 +75,20 @@ on the remote server's headers.
 
 ## Contact delivery
 
-**No email service is configured by default. Nothing is silently sent.**
+The contact form uses [Web3Forms](https://web3forms.com) to deliver messages directly to your email inbox without requiring a server backend.
 
-The form validates name, email, subject, and message using React Hook Form and
-Zod. Without an endpoint, Prepare Message creates a local draft that can be
-downloaded or copied. The success screen explicitly says the draft was **not
-sent**. No form data is persisted to local storage, and there is no artificial
-success delay.
+### Setup Instructions
 
-To enable delivery, create a real backend/serverless endpoint, copy
-`.env.example` to `.env.local`, and set `VITE_CONTACT_ENDPOINT` to the endpoint's
-public URL. Restart the development server or rebuild the production site after
-changing environment variables.
+1. Get a free access key at [web3forms.com](https://web3forms.com) (sent to your email).
+2. For local development, create a `.env.local` file in the project root:
+   ```env
+   VITE_CONTACT_ENDPOINT=https://api.web3forms.com/submit
+   VITE_WEB3FORMS_KEY=your_access_key
+   ```
+3. **Deployment (Vercel / Netlify)**: Add `VITE_CONTACT_ENDPOINT` and `VITE_WEB3FORMS_KEY` in your platform's environment settings **before** building/deploying.
 
-The client sends an HTTPS POST with `Content-Type: application/json` and:
-
-```json
-{
-  "fullName": "The sender's name",
-  "email": "sender@example.com",
-  "subject": "A project inquiry",
-  "message": "The validated message text."
-}
-```
-
-The endpoint must return a 2xx JSON response with `{"ok":true}` **only when the
-email provider has genuinely accepted the message**. All other responses are
-treated as errors. The UI includes a loading state, request timeout, network
-failure messages, server-error handling, and a downloadable draft fallback.
-A provider acceptance does not guarantee arrival in a recipient's inbox.
-
-Backend responsibilities:
-
-- Validate all fields again on the server. Frontend validation is not a security boundary.
-- Keep email-provider keys and recipient configuration in server-only environment variables.
-- Never use a `VITE_` prefix for a secret: Vite exposes these values to the browser.
-- Use a verified sender address; use the visitor's address only as a validated reply-to.
-- Add rate limiting, abuse protection, payload limits, and appropriate origin/CORS restrictions.
-- Encode user input safely and do not include untrusted text in raw email headers or HTML.
-- Return safe error responses and avoid logging sensitive message contents unnecessarily.
-
-End-to-end delivery cannot be verified until a real backend and sender are configured.
+> [!NOTE]
+> `VITE_` variables are public by design and baked into the static frontend output at build time. The Web3Forms access key is designed to be public (it only routes messages to your inbox). If environment variables are not set, the form seamlessly uses a local draft mode.
 
 ## Deploy
 
@@ -176,7 +128,7 @@ complete the following checks in actual browsers:
 - Check that Escape dismisses dialogs and focus returns to the opener.
 - Check mobile menu opening, closing, and section navigation.
 - Exercise each project action and empty search result state.
-- Check all form validation messages, draft downloads, clipboard fallback, and service-to-subject prefilling.
+- Check all form validation messages, draft downloads, and clipboard fallback.
 - With a real endpoint, test successful delivery, non-2xx responses, invalid JSON, timeouts, and offline behavior.
 - Confirm all configured social, repository, demo, and resume URLs.
 - Review reduced-motion behavior, contrast, layout overflow, and keyboard focus.
