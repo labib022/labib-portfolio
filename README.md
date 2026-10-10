@@ -66,12 +66,7 @@ Every project includes a primary "Visit live site" button linking directly to `l
 
 ## Resume
 
-With `resumeUrl` empty, Download Resume opens an honest information dialog and
-offers `public/resume-template.md` as a clearly marked editable template.
-It does not masquerade as a completed resume. Place your real PDF in `public/`
-and set, for example, `resumeUrl: "/resume.pdf"` to enable a real download.
-An external PDF URL also works, although cross-origin download behavior depends
-on the remote server's headers.
+To update the resume, replace public/Labib-Resume.pdf with a file of the same name and redeploy.
 
 ## Contact delivery
 
@@ -99,7 +94,7 @@ separately.
 
 On any static host, upload the **entire** `dist/` directory. The starter's
 single-file Vite plugin inlines application JavaScript and CSS into `index.html`,
-but public project thumbnails, the workspace image, favicon, and resume template
+but public project thumbnails, the workspace image, favicon, and resume PDF
 remain separate files. Do not upload only `index.html`.
 
 The site uses root-relative assets and is ready for a root-domain deployment.

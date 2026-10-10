@@ -11,7 +11,7 @@ export const site = {
   email: "labebul.dev@gmail.com",
   githubUrl: "https://github.com/labib022",
   linkedinUrl: "https://www.linkedin.com/in/labib-mern/",
-  resumeUrl: "", // TODO: Provide resume URL or path to PDF (e.g. "/resume.pdf")
+  resumeUrl: "/Labib-Resume.pdf",
   profileImage: "/images/labib-portfolio-img.jpg",
   siteUrl: "", // TODO: Provide live canonical website URL when deployed (e.g. "https://labib.dev")
   availableForOpportunities: true,
